@@ -1,31 +1,15 @@
 <?php
-
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Support\Facades\DB; // Import this
 use Illuminate\Database\Seeder;
+use App\Models\Product;
+use App\Models\Brand;
 
-class ProductSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-        DB::table('products')->insert([
-            [
-                'name' => 'Laptop',
-                'price' => 1200.99,
-                'description' => 'A high-performance laptop for professionals.',
-                'image_path' => 'storage/products/laptop.jpg',
-            ],
-            [
-                'name' => 'Smartphone',
-                'price' => 699.99,
-                'description' => 'A powerful smartphone with an amazing camera.',
-                'image_path' => 'storage/products/phone.jpg',
-            ],
-        ]);
+class ProductSeeder extends Seeder {
+    public function run(): void {
+        if (Brand::count() == 0) {
+            $this->call(BrandSeeder::class);
+        }
+        Product::factory(200)->create();
     }
 }
