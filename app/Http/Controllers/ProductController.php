@@ -10,8 +10,8 @@ class ProductController extends Controller
     public function index()
     {
         // Use eager loading to prevent N+1 query issues and paginate results
-        $products = Product::with('brand')->paginate(6); // Eager load brands
-        return view('products.index', compact('products')); // Pass $products to the view
+        $products = Product::with('brand')->paginate(9); 
+        return view('products.index', compact('products')); 
     }
 
     public function show($id)
