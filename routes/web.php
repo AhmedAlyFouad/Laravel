@@ -3,14 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
-
+// Home Page
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/about",function(){
-    return view("about-us");
+// About Page
+Route::get('/about', function () {
+    return view('about-us');
 });
 
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+// Resourceful routes for products (Automatically includes index, show, create, store, edit, update, destroy)
+Route::resource('products', ProductController::class);
