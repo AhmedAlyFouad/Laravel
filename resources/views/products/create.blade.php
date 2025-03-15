@@ -9,17 +9,17 @@
 
             <div class="mb-3">
                 <label class="form-label">Product Name</label>
-                <input type="text" name="name" class="form-control" required>
+                <input type="text" name="name" class="form-control" placeholder="e. g: Nokia" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Price</label>
-                <input type="number" name="price" class="form-control" required>
+                <input type="number" name="price" class="form-control" placeholder="e. g: 120" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Description</label>
-                <textarea name="description" class="form-control"></textarea>
+                <textarea name="description" class="form-control" placeholder="It is good"></textarea>
             </div>
 
             <div class="mb-3">
